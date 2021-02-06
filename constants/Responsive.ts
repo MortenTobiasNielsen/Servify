@@ -16,6 +16,8 @@ export const getNormalizedHeightFromPercent = (percent: number): number => {
   return roundToNearestPixel((height * percent) / 100);
 };
 
+// These functions are more or less just calls to dimensions and are therefore not tested
+/* istanbul ignore next */
 export const listenToChanges = (functionToTrigger: () => void): void => {
   Dimensions.addEventListener("change", (newDimensions) => {
     width = newDimensions.window.width;
@@ -25,6 +27,7 @@ export const listenToChanges = (functionToTrigger: () => void): void => {
   });
 };
 
+/* istanbul ignore next */
 export const removeListener = () => {
   Dimensions.removeEventListener("change", () => {});
 };
