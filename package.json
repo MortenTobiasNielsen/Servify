@@ -11,9 +11,6 @@
       "**/*.{ts,tsx}",
       "!**/coverage/**",
       "!**/node_modules/**"
-    ],
-    "setupFilesAfterEnv": [
-      "@testing-library/jest-native/extend-expect"
     ]
   },
   "scripts": {
@@ -22,7 +19,7 @@
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "test": "jest"
+    "test": "jest --watch"
   },
   "dependencies": {
     "@react-native-community/masked-view": "0.1.10",

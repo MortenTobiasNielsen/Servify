@@ -1,20 +1,25 @@
 import { Dimensions, PixelRatio } from "react-native";
 
-let Width = Dimensions.get("window").width;
-let Height = Dimensions.get("window").height;
+let width = Dimensions.get("window").width;
+let height = Dimensions.get("window").height;
+let scale = Dimensions.get("window").scale;
 
-export const GetNormalizedWidthFromPercent = (percent: number): number => {
-  return PixelRatio.roundToNearestPixel((Width * percent) / 100);
+const roundToNearestPixel = (layoutSize: number): number => {
+  return Math.round(layoutSize * scale) / scale;
 };
 
-export const GetNormalizedHeightFromPercent = (percent: number): number => {
-  return PixelRatio.roundToNearestPixel((Height * percent) / 100);
+export const getNormalizedWidthFromPercent = (percent: number): number => {
+  return roundToNearestPixel((width * percent) / 100);
+};
+
+export const getNormalizedHeightFromPercent = (percent: number): number => {
+  return roundToNearestPixel((height * percent) / 100);
 };
 
 export const listenToChanges = (functionToTrigger: () => void): void => {
   Dimensions.addEventListener("change", (newDimensions) => {
-    Width = newDimensions.window.width;
-    Height = newDimensions.window.height;
+    width = newDimensions.window.width;
+    height = newDimensions.window.height;
 
     functionToTrigger();
   });
@@ -22,4 +27,24 @@ export const listenToChanges = (functionToTrigger: () => void): void => {
 
 export const removeListener = () => {
   Dimensions.removeEventListener("change", () => {});
+};
+
+// ---------------------------------------------------------------------------
+// Mocking for testing
+// ---------------------------------------------------------------------------
+export const testFunctionality = (
+  windowWidth: number,
+  windowHeight: number,
+  windowScale: number,
+  percent: number,
+  testWidth: boolean
+): number => {
+  width = windowWidth;
+  height = windowHeight;
+  scale = windowScale;
+
+  if (testWidth) {
+    return getNormalizedWidthFromPercent(percent);
+  }
+  return getNormalizedHeightFromPercent(percent);
 };
