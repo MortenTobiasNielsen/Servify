@@ -5,24 +5,78 @@ import StartScreen from "../StartScreen";
 
 test("That the intended elements are rendered and are named correctly", () => {
   const { getByText, getByTestId } = render(<StartScreen />);
+  const title = "Vil du";
+  const buttonNameRegex = new RegExp(title, "i");
 
   // Check that the title is there
-  const screenHeader = getByText(/Vil du/i);
+  const screenHeader = getByText(buttonNameRegex);
   expect(screenHeader).toBeDefined();
 
   // Check that the default title component is used
-  const screenHeaderComponent = getByTestId("DefaultTitle");
+  const screenHeaderComponent = getByTestId("DefaultTitle - " + title);
   expect(screenHeaderComponent).toBeDefined();
 });
 
 test("That the find service button is rendered and named correctly", () => {
   const { getByText, getByTestId } = render(<StartScreen />);
+  const buttonName = "Finde en service";
+  const buttonNameRegex = new RegExp(buttonName, "i");
 
   // Check that the button is there
-  const findServiceButton = getByText(/Finde en service/i);
+  const findServiceButton = getByText(buttonNameRegex);
   expect(findServiceButton).toBeDefined();
 
   // Check that the default button is used
-  const findServiceButtonComponent = getByTestId("DefaultButton");
+  const findServiceButtonComponent = getByTestId(
+    "DefaultButton - " + buttonName
+  );
+  expect(findServiceButtonComponent).toBeDefined();
+});
+
+test("That the provide service button is rendered and named correctly", () => {
+  const { getByText, getByTestId } = render(<StartScreen />);
+  const buttonName = "Udbyde en service";
+  const buttonNameRegex = new RegExp(buttonName, "i");
+
+  // Check that the button is there
+  const findServiceButton = getByText(buttonNameRegex);
+  expect(findServiceButton).toBeDefined();
+
+  // Check that the default button is used
+  const findServiceButtonComponent = getByTestId(
+    "DefaultButton - " + buttonName
+  );
+  expect(findServiceButtonComponent).toBeDefined();
+});
+
+test("That the login button is rendered and named correctly", () => {
+  const { getByText, getByTestId } = render(<StartScreen />);
+  const buttonName = "Log ind";
+  const buttonNameRegex = new RegExp(buttonName, "i");
+
+  // Check that the button is there
+  const findServiceButton = getByText(buttonNameRegex);
+  expect(findServiceButton).toBeDefined();
+
+  // Check that the default button is used
+  const findServiceButtonComponent = getByTestId(
+    "DefaultButton - " + buttonName
+  );
+  expect(findServiceButtonComponent).toBeDefined();
+});
+
+test("That the create user button is rendered and named correctly", () => {
+  const { getByText, getByTestId } = render(<StartScreen />);
+  const buttonName = "Opret bruger";
+  const buttonNameRegex = new RegExp(buttonName, "i");
+
+  // Check that the button is there
+  const findServiceButton = getByText(buttonNameRegex);
+  expect(findServiceButton).toBeDefined();
+
+  // Check that the default button is used
+  const findServiceButtonComponent = getByTestId(
+    "DefaultButton - " + buttonName
+  );
   expect(findServiceButtonComponent).toBeDefined();
 });

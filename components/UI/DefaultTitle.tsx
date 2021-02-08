@@ -5,7 +5,7 @@ import * as Standards from "../../constants/Standards";
 
 const DefaultTitle = (props: { children: React.ReactNode }) => {
   return (
-    <Text style={styles.title} testID="DefaultTitle">
+    <Text style={styles.title} testID={"DefaultTitle - " + props.children}>
       {props.children}
     </Text>
   );

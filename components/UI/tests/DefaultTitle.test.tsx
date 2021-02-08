@@ -15,6 +15,6 @@ test("That the default title component render correctly", () => {
   expect(title).toBeDefined();
 
   // Check that the component has the right test id
-  const titleTestId = getByTestId("DefaultTitle");
+  const titleTestId = getByTestId("DefaultTitle - " + titleToBeSet);
   expect(titleTestId).toBeDefined();
 });

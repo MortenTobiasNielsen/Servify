@@ -14,6 +14,6 @@ test("That the default button component renders correctly", () => {
   expect(buttonName).toBeDefined();
 
   // Check that the component has the right test id
-  const buttonTestId = getByTestId("DefaultButton");
+  const buttonTestId = getByTestId("DefaultButton - " + TestingButtonName);
   expect(buttonTestId).toBeDefined();
 });

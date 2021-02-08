@@ -13,7 +13,7 @@ const DefaultButton: React.FC<ButtonProps> = (props) => {
     <TouchableOpacity
       activeOpacity={0.6}
       onPress={props.onPress}
-      testID="DefaultButton"
+      testID={"DefaultButton - " + props.children}
     >
       <View style={styles.button}>
         <Text style={styles.buttonText}>{props.children}</Text>

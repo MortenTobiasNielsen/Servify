@@ -9,6 +9,9 @@ const StartScreen = () => {
     <View>
       <DefaultTitle>Vil du</DefaultTitle>
       <DefaultButton onPress={() => {}}>Finde en service</DefaultButton>
+      <DefaultButton onPress={() => {}}>Udbyde en service</DefaultButton>
+      <DefaultButton onPress={() => {}}>Log ind</DefaultButton>
+      <DefaultButton onPress={() => {}}>Opret bruger</DefaultButton>
     </View>
   );
 };
