@@ -3,7 +3,7 @@ import { render } from "@testing-library/react-native";
 
 import DefaultTitle from "../DefaultTitle";
 
-test("That the title component render correctly", () => {
+test("That the default title component render correctly", () => {
   const titleToBeSet = "Testing that this works";
 
   const { getByText, getByTestId } = render(
