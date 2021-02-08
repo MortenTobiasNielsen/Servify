@@ -19,6 +19,10 @@ test("That the find service button is rendered and named correctly", () => {
   const { getByText, getByTestId } = render(<StartScreen />);
 
   // Check that the button is there
+  const findServiceButton = getByText(/Finde en service/i);
+  expect(findServiceButton).toBeDefined();
 
   // Check that the default button is used
+  const findServiceButtonComponent = getByTestId("DefaultButton");
+  expect(findServiceButtonComponent).toBeDefined();
 });
