@@ -5,7 +5,11 @@ import * as Standards from "../../constants/Standards";
 import * as Responsive from "../../constants/Responsive";
 
 const DefaultTitle = (props: { children: React.ReactNode }) => {
-  return <Text style={styles.title}>{props.children}</Text>;
+  return (
+    <Text style={styles.title} testID="DefaultTitle">
+      {props.children}
+    </Text>
+  );
 };
 
 const styles = StyleSheet.create({

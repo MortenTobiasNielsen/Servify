@@ -1,10 +1,11 @@
 import React from "react";
 import { Text, View } from "react-native";
+import DefaultTitle from "../components/UI/DefaultTitle";
 
 const StartScreen = () => {
   return (
     <View>
-      <Text>Vil du</Text>
+      <DefaultTitle>Vil du</DefaultTitle>
     </View>
   );
 };
