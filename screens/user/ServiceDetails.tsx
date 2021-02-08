@@ -1,17 +1,17 @@
 import React from "react";
 import { View } from "react-native";
 
-import { ChooseServiceProps } from "../../navigation/NotAuthNavigator";
+import { ServiceDetailsProps } from "../../navigation/NotAuthNavigator";
 import DefaultButton from "../../components/UI/DefaultButton";
 
-const ChooseService = ({ navigation }: ChooseServiceProps) => {
+const ServiceDetails = ({ navigation }: ServiceDetailsProps) => {
   return (
-    <View testID="ChooseService">
+    <View testID="ServiceDetails">
       <DefaultButton onPress={() => navigation.navigate("ServiceDetails")}>
-        Vælg Service
+        Estimer pris
       </DefaultButton>
     </View>
   );
 };
 
-export default ChooseService;
+export default ServiceDetails;

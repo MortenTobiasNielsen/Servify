@@ -1,17 +1,18 @@
 import React from "react";
 import { render } from "@testing-library/react-native";
 
-import ChooseService from "../ChooseService";
+import ServiceDetails from "../ServiceDetails";
+import { ServiceDetailsProps } from "../../../navigation/NotAuthNavigator";
 
 test("That the choose service screen is rendered correctly", () => {
   // @ts-ignore
-  const { getByTestId, getByText } = render(<ChooseService />);
+  const { getByTestId, getByText } = render(<ServiceDetails />);
 
   // Check that the rendered screen is the start screen
-  expect(getByTestId("ChooseService")).toBeDefined();
+  expect(getByTestId("ServiceDetails")).toBeDefined();
 
   // Check that the estimate price button is there
-  const buttonName = "Vælg Service";
+  const buttonName = "Estimer pris";
   const buttonNameRegex = new RegExp(buttonName, "i");
 
   const estimatePriceButton = getByText(buttonNameRegex);
