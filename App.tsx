@@ -5,6 +5,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 
+import AppNavigator from "./navigation/AppNavigator";
+
 const fetchFonts = () => {
   return Font.loadAsync({
     "open-sans": require("./assets/fonts/OpenSans-Regular.ttf"),
@@ -27,8 +29,7 @@ export default function App() {
 
   return (
     <NavigationContainer>
-      <Text>Test</Text>
-      {/* <AppNavigator /> */}
+      <AppNavigator />
     </NavigationContainer>
   );
 }
