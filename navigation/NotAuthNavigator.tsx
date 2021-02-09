@@ -11,6 +11,7 @@ import StartScreen from "../screens/StartScreen";
 import ChooseService from "../screens/user/ChooseService";
 import ServiceDetails from "../screens/user/ServiceDetails";
 import ChooseServiceProvider from "../screens/user/ChooseServiceProvider";
+import ServiceProviderDetails from "../screens/user/ServiceProviderDetails";
 
 import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
@@ -21,6 +22,7 @@ type UserStackNavigatorParamList = {
   "Find Service": undefined;
   "Service Detaljer": undefined;
   "Vælg Service Udbyder": undefined;
+  "Udbyder Detaljer": undefined;
 };
 
 // User tabs navigation type
@@ -86,7 +88,7 @@ export type ServiceDetailsProps = {
   navigation: ServiceDetailsNavigationProp;
 };
 
-// Service details screen props
+// Choose service provider screen props
 type ChooseServiceProviderScreenRouteProp = RouteProp<
   UserStackNavigatorParamList,
   "Vælg Service Udbyder"
@@ -100,6 +102,22 @@ type ChooseServiceProviderNavigationProp = StackNavigationProp<
 export type ChooseServiceProviderProps = {
   route: ChooseServiceProviderScreenRouteProp;
   navigation: ChooseServiceProviderNavigationProp;
+};
+
+// Service Provider Details screen props
+type ServiceProviderDetailsScreenRouteProp = RouteProp<
+  UserStackNavigatorParamList,
+  "Udbyder Detaljer"
+>;
+
+type ServiceProviderDetailNavigationProp = StackNavigationProp<
+  UserStackNavigatorParamList,
+  "Udbyder Detaljer"
+>;
+
+export type ServiceProviderDetailProps = {
+  route: ServiceProviderDetailsScreenRouteProp;
+  navigation: ServiceProviderDetailNavigationProp;
 };
 
 const UserStackNavigator = createStackNavigator<UserStackNavigatorParamList>();
@@ -119,6 +137,10 @@ const NotAuthStackNavigator = () => {
       <UserStackNavigator.Screen
         name="Vælg Service Udbyder"
         component={ChooseServiceProvider}
+      />
+      <UserStackNavigator.Screen
+        name="Udbyder Detaljer"
+        component={ServiceProviderDetails}
       />
     </UserStackNavigator.Navigator>
   );
