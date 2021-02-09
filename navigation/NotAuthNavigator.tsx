@@ -12,6 +12,7 @@ import ChooseService from "../screens/user/ChooseService";
 import ServiceDetails from "../screens/user/ServiceDetails";
 import ChooseServiceProvider from "../screens/user/ChooseServiceProvider";
 import ServiceProviderDetails from "../screens/user/ServiceProviderDetails";
+import ServiceToProvide from "../screens/ServiceProvider/ServiceToProvide";
 
 import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
@@ -25,6 +26,7 @@ type UserStackNavigatorParamList = {
   "Udbyder Detaljer": undefined;
   "Log Ind": undefined;
   "Opret Bruger": undefined;
+  "Udbyd Service": undefined;
 };
 
 // User tabs navigation type
@@ -122,6 +124,22 @@ export type ServiceProviderDetailProps = {
   navigation: ServiceProviderDetailNavigationProp;
 };
 
+// Service Provider Details screen props
+type ServiceToProvideScreenRouteProp = RouteProp<
+  UserStackNavigatorParamList,
+  "Udbyd Service"
+>;
+
+type ServiceToProvideNavigationProp = StackNavigationProp<
+  UserStackNavigatorParamList,
+  "Udbyd Service"
+>;
+
+export type ServiceToProvideProps = {
+  route: ServiceToProvideScreenRouteProp;
+  navigation: ServiceToProvideNavigationProp;
+};
+
 const UserStackNavigator = createStackNavigator<UserStackNavigatorParamList>();
 
 const NotAuthStackNavigator = () => {
@@ -143,6 +161,10 @@ const NotAuthStackNavigator = () => {
       <UserStackNavigator.Screen
         name="Udbyder Detaljer"
         component={ServiceProviderDetails}
+      />
+      <UserStackNavigator.Screen
+        name="Udbyd Service"
+        component={ServiceToProvide}
       />
     </UserStackNavigator.Navigator>
   );

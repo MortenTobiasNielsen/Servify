@@ -2,7 +2,6 @@ import React from "react";
 import { render } from "@testing-library/react-native";
 
 import ServiceDetails from "../ServiceDetails";
-import { ServiceDetailsProps } from "../../../navigation/NotAuthNavigator";
 
 test("That the choose service screen is rendered correctly", () => {
   // @ts-ignore
