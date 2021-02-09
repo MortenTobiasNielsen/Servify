@@ -3,6 +3,7 @@ import {
   createStackNavigator,
   StackNavigationProp,
 } from "@react-navigation/stack";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
 
 import StartScreen from "../screens/StartScreen";
@@ -10,12 +11,22 @@ import ChooseService from "../screens/user/ChooseService";
 import ServiceDetails from "../screens/user/ServiceDetails";
 import EstimatePrice from "../screens/user/EstimatePrice";
 
-// User Navigation Type
+import Login from "../screens/auth/Login";
+import Register from "../screens/auth/Register";
+
+// User stack navigation type
 type UserStackNavigatorParamList = {
   Start: undefined;
   ChooseService: undefined;
   ServiceDetails: undefined;
   EstimatePrice: undefined;
+};
+
+// User tabs navigation type
+type TabNavigatorParamList = {
+  Home: UserStackNavigatorParamList;
+  Login: undefined;
+  Register: undefined;
 };
 
 // Start screen props
@@ -81,7 +92,7 @@ export type EstimatePriceProps = {
 
 const UserStackNavigator = createStackNavigator<UserStackNavigatorParamList>();
 
-const NotAuthNavigator = () => {
+const NotAuthStackNavigator = () => {
   return (
     <UserStackNavigator.Navigator>
       <UserStackNavigator.Screen name="Start" component={StartScreen} />
@@ -101,4 +112,39 @@ const NotAuthNavigator = () => {
   );
 };
 
-export default NotAuthNavigator;
+const NotAuthLoginStackNavigator = createStackNavigator();
+
+const LoginStackNavigator = () => {
+  return (
+    <NotAuthLoginStackNavigator.Navigator>
+      <NotAuthLoginStackNavigator.Screen name="Login" component={Login} />
+    </NotAuthLoginStackNavigator.Navigator>
+  );
+};
+
+const NotAuthRegisterStackNavigator = createStackNavigator();
+
+const RegisterStackNavigator = () => {
+  return (
+    <NotAuthRegisterStackNavigator.Navigator>
+      <NotAuthRegisterStackNavigator.Screen
+        name="Register"
+        component={Register}
+      />
+    </NotAuthRegisterStackNavigator.Navigator>
+  );
+};
+
+const TabNavigator = createBottomTabNavigator<TabNavigatorParamList>();
+
+const NotAuthTabNavigation = () => {
+  return (
+    <TabNavigator.Navigator>
+      <TabNavigator.Screen name="Home" component={NotAuthStackNavigator} />
+      <TabNavigator.Screen name="Login" component={LoginStackNavigator} />
+      <TabNavigator.Screen name="Register" component={RegisterStackNavigator} />
+    </TabNavigator.Navigator>
+  );
+};
+
+export default NotAuthTabNavigation;
