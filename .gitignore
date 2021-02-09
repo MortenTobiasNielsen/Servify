@@ -14,3 +14,7 @@ web-build/
 coverage
 
 test/**
+
+# To prevent it from contaminating statistics on github
+# Remember to commit it manually
+package-lock.json
