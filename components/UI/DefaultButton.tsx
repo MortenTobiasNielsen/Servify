@@ -9,14 +9,18 @@ interface ButtonProps {
 }
 
 const DefaultButton: React.FC<ButtonProps> = (props) => {
+  const buttonTitle = props.children!.toLocaleString();
+
   return (
     <TouchableOpacity
+      accessibilityRole="button"
+      accessibilityLabel={buttonTitle}
       activeOpacity={0.6}
       onPress={props.onPress}
-      testID={"DefaultButton - " + props.children}
+      testID={"DefaultButton - " + buttonTitle}
     >
       <View style={styles.button}>
-        <Text style={styles.buttonText}>{props.children}</Text>
+        <Text style={styles.buttonText}>{buttonTitle}</Text>
       </View>
     </TouchableOpacity>
   );

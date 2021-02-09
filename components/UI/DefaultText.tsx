@@ -4,15 +4,8 @@ import { Text, StyleSheet } from "react-native";
 import * as Standards from "../../constants/Standards";
 
 const DefaultTitle = (props: { children: React.ReactNode }) => {
-  const titleText = props.children?.toLocaleString();
-
   return (
-    <Text
-      accessibilityRole="header"
-      accessibilityLabel={titleText}
-      style={styles.title}
-      testID={"DefaultTitle - " + titleText}
-    >
+    <Text style={styles.title} testID={"DefaultTitle - " + props.children}>
       {props.children}
     </Text>
   );
@@ -20,9 +13,9 @@ const DefaultTitle = (props: { children: React.ReactNode }) => {
 
 const styles = StyleSheet.create({
   title: {
-    fontFamily: Standards.Fonts.openSansBold,
+    fontFamily: Standards.Fonts.openSans,
     color: Standards.Colors.primary,
-    fontSize: Standards.FontSize.medium,
+    fontSize: Standards.FontSize.small,
   },
 });
 

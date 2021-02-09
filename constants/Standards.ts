@@ -39,7 +39,7 @@ export const BorderRadius = {
 // Standard FontSize
 // ---------------------------------------------------------------------------
 export const FontSize = {
-  small: Responsive.getNormalizedHeightFromPercent(1.5),
-  medium: Responsive.getNormalizedHeightFromPercent(2.5),
+  small: Responsive.getNormalizedHeightFromPercent(2),
+  medium: Responsive.getNormalizedHeightFromPercent(3),
   large: Responsive.getNormalizedHeightFromPercent(4),
 };

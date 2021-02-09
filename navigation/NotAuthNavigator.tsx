@@ -23,17 +23,19 @@ type UserStackNavigatorParamList = {
   "Service Detaljer": undefined;
   "Vælg Service Udbyder": undefined;
   "Udbyder Detaljer": undefined;
+  "Log Ind": undefined;
+  "Opret Bruger": undefined;
 };
 
 // User tabs navigation type
 type TabNavigatorParamList = {
   "Start Side": UserStackNavigatorParamList;
-  "Log ind": undefined;
+  "Log Ind": undefined;
   "Opret Bruger": undefined;
 };
 
 type LoginStackNavigatorParamList = {
-  "Log ind": undefined;
+  "Log Ind": undefined;
 };
 
 type RegisterStackNavigatorParamList = {
@@ -151,7 +153,7 @@ const NotAuthLoginStackNavigator = createStackNavigator<LoginStackNavigatorParam
 const LoginStackNavigator = () => {
   return (
     <NotAuthLoginStackNavigator.Navigator>
-      <NotAuthLoginStackNavigator.Screen name="Log ind" component={Login} />
+      <NotAuthLoginStackNavigator.Screen name="Log Ind" component={Login} />
     </NotAuthLoginStackNavigator.Navigator>
   );
 };
@@ -180,7 +182,7 @@ const NotAuthTabNavigation = () => {
 
           if (route.name === "Start Side") {
             iconName = focused ? "ios-home" : "ios-home";
-          } else if (route.name === "Log ind") {
+          } else if (route.name === "Log Ind") {
             iconName = focused ? "md-list" : "ios-list";
           } else {
             iconName = focused ? "md-create" : "ios-create";
@@ -200,7 +202,7 @@ const NotAuthTabNavigation = () => {
         name="Start Side"
         component={NotAuthStackNavigator}
       />
-      <TabNavigator.Screen name="Log ind" component={LoginStackNavigator} />
+      <TabNavigator.Screen name="Log Ind" component={LoginStackNavigator} />
       <TabNavigator.Screen
         name="Opret Bruger"
         component={RegisterStackNavigator}
