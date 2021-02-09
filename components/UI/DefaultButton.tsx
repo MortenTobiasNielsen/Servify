@@ -31,12 +31,14 @@ const styles = StyleSheet.create({
     backgroundColor: Standards.Colors.primary,
     paddingVertical: Standards.Padding.small,
     paddingHorizontal: Standards.Padding.medium,
-    borderRadius: Standards.BorderRadius.medium,
+    marginVertical: Standards.Padding.large,
+    borderRadius: Standards.BorderRadius.large,
+    alignItems: "center",
   },
   buttonText: {
     color: Standards.Colors.buttonText,
     fontFamily: Standards.Fonts.openSans,
-    fontSize: Standards.FontSize.medium,
+    fontSize: Standards.FontSize.large,
   },
 });
 

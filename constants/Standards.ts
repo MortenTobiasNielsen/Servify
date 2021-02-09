@@ -30,9 +30,9 @@ export const Padding = {
 // Standard borderRadius
 // ---------------------------------------------------------------------------
 export const BorderRadius = {
-  small: Responsive.getNormalizedHeightFromPercent(0.2),
-  medium: Responsive.getNormalizedHeightFromPercent(0.3),
-  large: Responsive.getNormalizedHeightFromPercent(0.5),
+  small: Responsive.getNormalizedHeightFromPercent(0.3),
+  medium: Responsive.getNormalizedHeightFromPercent(0.5),
+  large: Responsive.getNormalizedHeightFromPercent(1),
 };
 
 // ---------------------------------------------------------------------------

@@ -22,7 +22,7 @@ const styles = StyleSheet.create({
   title: {
     fontFamily: Standards.Fonts.openSansBold,
     color: Standards.Colors.primary,
-    fontSize: Standards.FontSize.medium,
+    fontSize: Standards.FontSize.large,
   },
 });
 

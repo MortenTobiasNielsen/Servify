@@ -23,7 +23,7 @@ test("The user navigation journey when not logged in", async () => {
 
   // Check that the "Finde en service" button is there
   // and it can be pressed
-  const findServiceButton = getByText(/Finde En Service/i);
+  const findServiceButton = getByText(/Find Service/i);
   fireEvent.press(findServiceButton);
 
   // ---------------------------------------------------------------------------
