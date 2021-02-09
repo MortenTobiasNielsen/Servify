@@ -10,12 +10,10 @@ const StartScreen = ({ navigation }: StartScreenProps) => {
   return (
     <View testID="StartScreen">
       <DefaultTitle>Vil du</DefaultTitle>
-      <DefaultButton onPress={() => navigation.navigate("ChooseService")}>
+      <DefaultButton onPress={() => navigation.navigate("Find Service")}>
         Finde en service
       </DefaultButton>
       <DefaultButton onPress={() => {}}>Udbyde en service</DefaultButton>
-      <DefaultButton onPress={() => {}}>Log ind</DefaultButton>
-      <DefaultButton onPress={() => {}}>Opret bruger</DefaultButton>
     </View>
   );
 };

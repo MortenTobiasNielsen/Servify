@@ -7,7 +7,9 @@ import DefaultButton from "../../components/UI/DefaultButton";
 const ServiceDetails = ({ navigation }: ServiceDetailsProps) => {
   return (
     <View testID="ServiceDetails">
-      <DefaultButton onPress={() => navigation.navigate("EstimatePrice")}>
+      <DefaultButton
+        onPress={() => navigation.navigate("Vælg Service Udbyder")}
+      >
         Estimer pris
       </DefaultButton>
     </View>

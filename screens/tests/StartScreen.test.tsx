@@ -51,37 +51,3 @@ test("That the provide service button is rendered and named correctly", () => {
   );
   expect(findServiceButtonComponent).toBeDefined();
 });
-
-test("That the login button is rendered and named correctly", () => {
-  // @ts-ignore
-  const { getByText, getByTestId } = render(<StartScreen />);
-  const buttonName = "Log ind";
-  const buttonNameRegex = new RegExp(buttonName, "i");
-
-  // Check that the button is there
-  const findServiceButton = getByText(buttonNameRegex);
-  expect(findServiceButton).toBeDefined();
-
-  // Check that the default button is used
-  const findServiceButtonComponent = getByTestId(
-    "DefaultButton - " + buttonName
-  );
-  expect(findServiceButtonComponent).toBeDefined();
-});
-
-test("That the create user button is rendered and named correctly", () => {
-  // @ts-ignore
-  const { getByText, getByTestId } = render(<StartScreen />);
-  const buttonName = "Opret bruger";
-  const buttonNameRegex = new RegExp(buttonName, "i");
-
-  // Check that the button is there
-  const findServiceButton = getByText(buttonNameRegex);
-  expect(findServiceButton).toBeDefined();
-
-  // Check that the default button is used
-  const findServiceButtonComponent = getByTestId(
-    "DefaultButton - " + buttonName
-  );
-  expect(findServiceButtonComponent).toBeDefined();
-});

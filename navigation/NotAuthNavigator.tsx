@@ -5,6 +5,7 @@ import {
 } from "@react-navigation/stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { RouteProp } from "@react-navigation/native";
+import { Ionicons } from "@expo/vector-icons";
 
 import StartScreen from "../screens/StartScreen";
 import ChooseService from "../screens/user/ChooseService";
@@ -16,25 +17,36 @@ import Register from "../screens/auth/Register";
 
 // User stack navigation type
 type UserStackNavigatorParamList = {
-  Start: undefined;
-  ChooseService: undefined;
-  ServiceDetails: undefined;
-  EstimatePrice: undefined;
+  "Start Side": undefined;
+  "Find Service": undefined;
+  "Service Detaljer": undefined;
+  "Vælg Service Udbyder": undefined;
 };
 
 // User tabs navigation type
 type TabNavigatorParamList = {
-  Home: UserStackNavigatorParamList;
-  Login: undefined;
-  Register: undefined;
+  "Start Side": UserStackNavigatorParamList;
+  "Log ind": undefined;
+  "Opret Bruger": undefined;
+};
+
+type LoginStackNavigatorParamList = {
+  "Log ind": undefined;
+};
+
+type RegisterStackNavigatorParamList = {
+  "Opret Bruger": undefined;
 };
 
 // Start screen props
-type StartScreenRouteProp = RouteProp<UserStackNavigatorParamList, "Start">;
+type StartScreenRouteProp = RouteProp<
+  UserStackNavigatorParamList,
+  "Start Side"
+>;
 
 type StartScreenNavigationProp = StackNavigationProp<
   UserStackNavigatorParamList,
-  "Start"
+  "Start Side"
 >;
 
 export type StartScreenProps = {
@@ -45,12 +57,12 @@ export type StartScreenProps = {
 // Choose service screen props
 type ChooseServiceScreenRouteProp = RouteProp<
   UserStackNavigatorParamList,
-  "ChooseService"
+  "Find Service"
 >;
 
 type ChooseServiceNavigationProp = StackNavigationProp<
   UserStackNavigatorParamList,
-  "ChooseService"
+  "Find Service"
 >;
 
 export type ChooseServiceProps = {
@@ -61,12 +73,12 @@ export type ChooseServiceProps = {
 // Service details screen props
 type ServiceDetailsScreenRouteProp = RouteProp<
   UserStackNavigatorParamList,
-  "ServiceDetails"
+  "Service Detaljer"
 >;
 
 type ServiceDetailsNavigationProp = StackNavigationProp<
   UserStackNavigatorParamList,
-  "ServiceDetails"
+  "Service Detaljer"
 >;
 
 export type ServiceDetailsProps = {
@@ -77,12 +89,12 @@ export type ServiceDetailsProps = {
 // Service details screen props
 type EstimatePriceScreenRouteProp = RouteProp<
   UserStackNavigatorParamList,
-  "ServiceDetails"
+  "Vælg Service Udbyder"
 >;
 
 type EstimatePriceNavigationProp = StackNavigationProp<
   UserStackNavigatorParamList,
-  "ServiceDetails"
+  "Vælg Service Udbyder"
 >;
 
 export type EstimatePriceProps = {
@@ -95,40 +107,40 @@ const UserStackNavigator = createStackNavigator<UserStackNavigatorParamList>();
 const NotAuthStackNavigator = () => {
   return (
     <UserStackNavigator.Navigator>
-      <UserStackNavigator.Screen name="Start" component={StartScreen} />
+      <UserStackNavigator.Screen name="Start Side" component={StartScreen} />
       <UserStackNavigator.Screen
-        name="ChooseService"
+        name="Find Service"
         component={ChooseService}
       />
       <UserStackNavigator.Screen
-        name="ServiceDetails"
+        name="Service Detaljer"
         component={ServiceDetails}
       />
       <UserStackNavigator.Screen
-        name="EstimatePrice"
+        name="Vælg Service Udbyder"
         component={EstimatePrice}
       />
     </UserStackNavigator.Navigator>
   );
 };
 
-const NotAuthLoginStackNavigator = createStackNavigator();
+const NotAuthLoginStackNavigator = createStackNavigator<LoginStackNavigatorParamList>();
 
 const LoginStackNavigator = () => {
   return (
     <NotAuthLoginStackNavigator.Navigator>
-      <NotAuthLoginStackNavigator.Screen name="Login" component={Login} />
+      <NotAuthLoginStackNavigator.Screen name="Log ind" component={Login} />
     </NotAuthLoginStackNavigator.Navigator>
   );
 };
 
-const NotAuthRegisterStackNavigator = createStackNavigator();
+const NotAuthRegisterStackNavigator = createStackNavigator<RegisterStackNavigatorParamList>();
 
 const RegisterStackNavigator = () => {
   return (
     <NotAuthRegisterStackNavigator.Navigator>
       <NotAuthRegisterStackNavigator.Screen
-        name="Register"
+        name="Opret Bruger"
         component={Register}
       />
     </NotAuthRegisterStackNavigator.Navigator>
@@ -139,10 +151,38 @@ const TabNavigator = createBottomTabNavigator<TabNavigatorParamList>();
 
 const NotAuthTabNavigation = () => {
   return (
-    <TabNavigator.Navigator>
-      <TabNavigator.Screen name="Home" component={NotAuthStackNavigator} />
-      <TabNavigator.Screen name="Login" component={LoginStackNavigator} />
-      <TabNavigator.Screen name="Register" component={RegisterStackNavigator} />
+    <TabNavigator.Navigator
+      screenOptions={({ route }) => ({
+        tabBarIcon: ({ focused, color, size }) => {
+          let iconName;
+
+          if (route.name === "Start Side") {
+            iconName = focused ? "ios-home" : "ios-home";
+          } else if (route.name === "Log ind") {
+            iconName = focused ? "md-list" : "ios-list";
+          } else {
+            iconName = focused ? "md-create" : "ios-create";
+          }
+
+          // You can return any component that you like here!
+          // @ts-ignore
+          return <Ionicons name={iconName} size={size} color={color} />;
+        },
+      })}
+      tabBarOptions={{
+        activeTintColor: "tomato",
+        inactiveTintColor: "gray",
+      }}
+    >
+      <TabNavigator.Screen
+        name="Start Side"
+        component={NotAuthStackNavigator}
+      />
+      <TabNavigator.Screen name="Log ind" component={LoginStackNavigator} />
+      <TabNavigator.Screen
+        name="Opret Bruger"
+        component={RegisterStackNavigator}
+      />
     </TabNavigator.Navigator>
   );
 };

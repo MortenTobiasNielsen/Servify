@@ -7,7 +7,7 @@ import DefaultButton from "../../components/UI/DefaultButton";
 const ChooseService = ({ navigation }: ChooseServiceProps) => {
   return (
     <View testID="ChooseService">
-      <DefaultButton onPress={() => navigation.navigate("ServiceDetails")}>
+      <DefaultButton onPress={() => navigation.navigate("Service Detaljer")}>
         Vælg Service
       </DefaultButton>
     </View>
