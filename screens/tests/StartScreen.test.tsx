@@ -4,6 +4,7 @@ import { render } from "@testing-library/react-native";
 import StartScreen from "../StartScreen";
 
 test("That the intended elements are rendered and are named correctly", () => {
+  // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
   const title = "Vil du";
   const buttonNameRegex = new RegExp(title, "i");
@@ -18,6 +19,7 @@ test("That the intended elements are rendered and are named correctly", () => {
 });
 
 test("That the find service button is rendered and named correctly", () => {
+  // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
   const buttonName = "Finde en service";
   const buttonNameRegex = new RegExp(buttonName, "i");
@@ -34,6 +36,7 @@ test("That the find service button is rendered and named correctly", () => {
 });
 
 test("That the provide service button is rendered and named correctly", () => {
+  // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
   const buttonName = "Udbyde en service";
   const buttonNameRegex = new RegExp(buttonName, "i");
@@ -50,6 +53,7 @@ test("That the provide service button is rendered and named correctly", () => {
 });
 
 test("That the login button is rendered and named correctly", () => {
+  // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
   const buttonName = "Log ind";
   const buttonNameRegex = new RegExp(buttonName, "i");
@@ -66,6 +70,7 @@ test("That the login button is rendered and named correctly", () => {
 });
 
 test("That the create user button is rendered and named correctly", () => {
+  // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
   const buttonName = "Opret bruger";
   const buttonNameRegex = new RegExp(buttonName, "i");

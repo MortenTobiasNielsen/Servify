@@ -1,5 +1,5 @@
 import React from "react";
-import { render, waitFor, fireEvent } from "@testing-library/react-native";
+import { render, waitFor, fireEvent, act } from "@testing-library/react-native";
 
 import App from "./App";
 
@@ -27,7 +27,9 @@ test("The user navigation journey when not logged in", async () => {
   // Check that the rendered screen is service details
   // When the estimate price button is pressed
   const estimatePriceButton = getByText(/Estimer pris/i);
-  fireEvent.press(estimatePriceButton);
+  await act(async () => {
+    fireEvent.press(estimatePriceButton);
+  });
 
-  expect(getByTestId("ServiceDetails")).toBeDefined();
+  expect(getByTestId("EstimatePrice")).toBeDefined();
 });
