@@ -10,7 +10,7 @@ import { Ionicons } from "@expo/vector-icons";
 import StartScreen from "../screens/StartScreen";
 import ChooseService from "../screens/user/ChooseService";
 import ServiceDetails from "../screens/user/ServiceDetails";
-import EstimatePrice from "../screens/user/EstimatePrice";
+import ChooseServiceProvider from "../screens/user/ChooseServiceProvider";
 
 import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
@@ -87,19 +87,19 @@ export type ServiceDetailsProps = {
 };
 
 // Service details screen props
-type EstimatePriceScreenRouteProp = RouteProp<
+type ChooseServiceProviderScreenRouteProp = RouteProp<
   UserStackNavigatorParamList,
   "Vælg Service Udbyder"
 >;
 
-type EstimatePriceNavigationProp = StackNavigationProp<
+type ChooseServiceProviderNavigationProp = StackNavigationProp<
   UserStackNavigatorParamList,
   "Vælg Service Udbyder"
 >;
 
-export type EstimatePriceProps = {
-  route: EstimatePriceScreenRouteProp;
-  navigation: EstimatePriceNavigationProp;
+export type ChooseServiceProviderProps = {
+  route: ChooseServiceProviderScreenRouteProp;
+  navigation: ChooseServiceProviderNavigationProp;
 };
 
 const UserStackNavigator = createStackNavigator<UserStackNavigatorParamList>();
@@ -118,7 +118,7 @@ const NotAuthStackNavigator = () => {
       />
       <UserStackNavigator.Screen
         name="Vælg Service Udbyder"
-        component={EstimatePrice}
+        component={ChooseServiceProvider}
       />
     </UserStackNavigator.Navigator>
   );

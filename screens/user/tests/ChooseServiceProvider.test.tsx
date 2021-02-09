@@ -1,12 +1,12 @@
 import React from "react";
 import { render } from "@testing-library/react-native";
 
-import EstimatePrice from "../EstimatePrice";
+import ChooseServiceProvider from "../ChooseServiceProvider";
 
 test("That the choose service screen is rendered correctly", () => {
   // @ts-ignore
-  const { getByTestId } = render(<EstimatePrice />);
+  const { getByTestId } = render(<ChooseServiceProvider />);
 
   // Check that the rendered screen is the start screen
-  expect(getByTestId("EstimatePrice")).toBeDefined();
+  expect(getByTestId("ChooseServiceProvider")).toBeDefined();
 });

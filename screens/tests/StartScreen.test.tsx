@@ -21,7 +21,7 @@ test("That the intended elements are rendered and are named correctly", () => {
 test("That the find service button is rendered and named correctly", () => {
   // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
-  const buttonName = "Finde en service";
+  const buttonName = "Finde En Service";
   const buttonNameRegex = new RegExp(buttonName, "i");
 
   // Check that the button is there
@@ -38,7 +38,7 @@ test("That the find service button is rendered and named correctly", () => {
 test("That the provide service button is rendered and named correctly", () => {
   // @ts-ignore
   const { getByText, getByTestId } = render(<StartScreen />);
-  const buttonName = "Udbyde en service";
+  const buttonName = "Udbyde En Service";
   const buttonNameRegex = new RegExp(buttonName, "i");
 
   // Check that the button is there

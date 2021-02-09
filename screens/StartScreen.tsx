@@ -1,6 +1,5 @@
 import React from "react";
 import { View } from "react-native";
-import { StackNavigationProp } from "@react-navigation/stack";
 
 import { StartScreenProps } from "../navigation/NotAuthNavigator";
 import DefaultButton from "../components/UI/DefaultButton";
@@ -11,9 +10,9 @@ const StartScreen = ({ navigation }: StartScreenProps) => {
     <View testID="StartScreen">
       <DefaultTitle>Vil du</DefaultTitle>
       <DefaultButton onPress={() => navigation.navigate("Find Service")}>
-        Finde en service
+        Finde En Service
       </DefaultButton>
-      <DefaultButton onPress={() => {}}>Udbyde en service</DefaultButton>
+      <DefaultButton onPress={() => {}}>Udbyde En Service</DefaultButton>
     </View>
   );
 };
