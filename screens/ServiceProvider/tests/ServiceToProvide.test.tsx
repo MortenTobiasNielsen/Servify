@@ -3,11 +3,11 @@ import { render } from "@testing-library/react-native";
 
 import ServiceToProvide from "../ServiceToProvide";
 
-test("That the choose service screen is rendered correctly", () => {
+test("That the Service to provide screen is rendered correctly", () => {
   // @ts-ignore
   const { getByTestId, getByText } = render(<ServiceToProvide />);
 
-  // Check that the rendered screen is the start screen
+  // Check that the rendered screen is the service to provide
   expect(getByTestId("ServiceToProvide")).toBeDefined();
 
   // Check that the choose service button is there

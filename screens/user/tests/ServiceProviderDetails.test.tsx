@@ -3,13 +3,13 @@ import { render } from "@testing-library/react-native";
 
 import ServiceProviderDetails from "../ServiceProviderDetails";
 
-test("That the choose service screen is rendered correctly", () => {
+test("That the service provider details screen is rendered correctly", () => {
   const { getByTestId, getByText, getByLabelText } = render(
     // @ts-ignore
     <ServiceProviderDetails />
   );
 
-  // Check that the rendered screen is the start screen
+  // Check that the rendered screen is the service provider details
   expect(getByTestId("ServiceProviderDetails")).toBeDefined();
 
   // Check that the "not logged in message" is there

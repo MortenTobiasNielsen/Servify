@@ -3,7 +3,7 @@ import { render } from "@testing-library/react-native";
 
 import ChooseServiceProvider from "../ChooseServiceProvider";
 
-test("That the choose service screen is rendered correctly", () => {
+test("That the choose service provider screen is rendered correctly", () => {
   // @ts-ignore
   const { getByTestId } = render(<ChooseServiceProvider />);
 

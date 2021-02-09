@@ -3,6 +3,7 @@ import { View, StyleSheet } from "react-native";
 
 import { StartScreenProps } from "../navigation/NotAuthNavigator";
 import DefaultButton from "../components/UI/DefaultButton";
+import DefaultAddButton from "../components/UI/DefaultAddButton";
 
 import * as Standards from "../constants/Standards";
 
@@ -17,6 +18,7 @@ const StartScreen = ({ navigation }: StartScreenProps) => {
           <DefaultButton onPress={() => navigation.navigate("Udbyd Service")}>
             Udbyd Service
           </DefaultButton>
+          <DefaultAddButton />
         </View>
       </View>
     </View>

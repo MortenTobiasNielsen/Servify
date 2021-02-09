@@ -7,7 +7,7 @@ test("That the choose service screen is rendered correctly", () => {
   // @ts-ignore
   const { getByTestId, getByText } = render(<ServiceDetails />);
 
-  // Check that the rendered screen is the start screen
+  // Check that the rendered screen is the choose service
   expect(getByTestId("ServiceDetails")).toBeDefined();
 
   // Check that the estimate price button is there
