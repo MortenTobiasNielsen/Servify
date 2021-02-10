@@ -43,3 +43,19 @@ export const FontSize = {
   medium: Responsive.getNormalizedHeightFromPercent(3),
   large: Responsive.getNormalizedHeightFromPercent(4),
 };
+
+// ---------------------------------------------------------------------------
+// Standard AddRemoveButton
+// ---------------------------------------------------------------------------
+const AddRemoveButtonSize = 4;
+
+export const AddRemoveButton = {
+  size: Responsive.getNormalizedHeightFromPercent(AddRemoveButtonSize),
+  Radius: Responsive.getNormalizedHeightFromPercent(AddRemoveButtonSize * 0.5),
+  LineLength: Responsive.getNormalizedHeightFromPercent(
+    AddRemoveButtonSize * 0.6
+  ),
+  LineWidth: Responsive.getNormalizedHeightFromPercent(
+    AddRemoveButtonSize * 0.1
+  ),
+};
