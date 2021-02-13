@@ -1,17 +1,13 @@
 {
-    "cSpell.ignoreWords": [
-        "eller",
-        "j",
-        "kontakte",
-        "lg",
-        "logge",
-        "oprete",
-        "oprette",
-        "tilf",
-        "tilføj",
-        "udbyd",
-        "udbyderen",
-        "v",
-        "vælg"
-    ]
+  "cSpell.ignoreWords": [
+    "detailjer",
+    "eller",
+    "kontakte",
+    "logge",
+    "oprette",
+    "tilføj",
+    "udbyd",
+    "udbyderen",
+    "vælg"
+  ]
 }

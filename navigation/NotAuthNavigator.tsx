@@ -13,6 +13,7 @@ import ServiceDetails from "../screens/user/ServiceDetails";
 import ChooseServiceProvider from "../screens/user/ChooseServiceProvider";
 import ServiceProviderDetails from "../screens/user/ServiceProviderDetails";
 import ServiceToProvide from "../screens/ServiceProvider/ServiceToProvide";
+import ServicePriceDetails from "../screens/ServiceProvider/ServicePriceDetails";
 
 import Login from "../screens/auth/Login";
 import Register from "../screens/auth/Register";
@@ -27,6 +28,7 @@ type UserStackNavigatorParamList = {
   "Log Ind": undefined;
   "Opret Bruger": undefined;
   "Udbyd Service": undefined;
+  "Service Pris Detailjer": undefined;
 };
 
 // User tabs navigation type
@@ -165,6 +167,10 @@ const NotAuthStackNavigator = () => {
       <UserStackNavigator.Screen
         name="Udbyd Service"
         component={ServiceToProvide}
+      />
+      <UserStackNavigator.Screen
+        name="Service Pris Detailjer"
+        component={ServicePriceDetails}
       />
     </UserStackNavigator.Navigator>
   );

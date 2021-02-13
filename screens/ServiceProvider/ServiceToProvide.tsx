@@ -7,7 +7,11 @@ import { ServiceToProvideProps } from "../../navigation/NotAuthNavigator";
 const ServiceToProvide = ({ navigation }: ServiceToProvideProps) => {
   return (
     <View testID="ServiceToProvide">
-      <DefaultButton onPress={() => {}}>Vælg Service</DefaultButton>
+      <DefaultButton
+        onPress={() => navigation.navigate("Service Pris Detailjer")}
+      >
+        Vælg Service
+      </DefaultButton>
       <DefaultButton onPress={() => {}}>Udbyd Ny Service</DefaultButton>
     </View>
   );
