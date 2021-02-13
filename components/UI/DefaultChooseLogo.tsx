@@ -39,7 +39,11 @@ const DefaultChooseLogo = () => {
   };
 
   return (
-    <TouchableOpacity style={styles.logoContainer} onPress={findImageHandler}>
+    <TouchableOpacity
+      style={styles.logoContainer}
+      onPress={findImageHandler}
+      testID="DefaultChooseLogo"
+    >
       {!logo ? (
         <DefaultText>Tilføj Logo</DefaultText>
       ) : (

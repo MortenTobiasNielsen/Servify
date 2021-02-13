@@ -7,7 +7,8 @@ export const Colors = {
   primary: "#C2185B",
   accent: "#FFC107",
   buttonText: "#FFF",
-  text: "#000",
+  text: "#444",
+  borders: "#888",
 };
 
 // ---------------------------------------------------------------------------
@@ -37,6 +38,15 @@ export const BorderRadius = {
 };
 
 // ---------------------------------------------------------------------------
+// Standard border
+// ---------------------------------------------------------------------------
+export const Border = {
+  small: Responsive.getNormalizedHeightFromPercent(0.15),
+  medium: Responsive.getNormalizedHeightFromPercent(0.25),
+  large: Responsive.getNormalizedHeightFromPercent(0.35),
+};
+
+// ---------------------------------------------------------------------------
 // Standard FontSize
 // ---------------------------------------------------------------------------
 export const FontSize = {
@@ -48,7 +58,7 @@ export const FontSize = {
 // ---------------------------------------------------------------------------
 // Standard AddRemoveButton
 // ---------------------------------------------------------------------------
-const AddRemoveButtonSize = 4;
+const AddRemoveButtonSize = 3;
 
 export const AddRemoveButton = {
   size: Responsive.getNormalizedHeightFromPercent(AddRemoveButtonSize),
