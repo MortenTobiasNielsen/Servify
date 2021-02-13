@@ -15,7 +15,7 @@ const StartScreen = ({ navigation }: StartScreenProps) => {
           <DefaultButton onPress={() => navigation.navigate("Find Service")}>
             Find Service
           </DefaultButton>
-          <DefaultButton onPress={() => navigation.navigate("Udbyd Service")}>
+          <DefaultButton onPress={() => navigation.navigate("Udbyder Profil")}>
             Udbyd Service
           </DefaultButton>
         </View>

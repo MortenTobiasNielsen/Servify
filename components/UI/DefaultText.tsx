@@ -14,7 +14,7 @@ const DefaultTitle = (props: { children: React.ReactNode }) => {
 const styles = StyleSheet.create({
   title: {
     fontFamily: Standards.Fonts.openSans,
-    color: Standards.Colors.primary,
+    color: Standards.Colors.text,
     fontSize: Standards.FontSize.small,
   },
 });

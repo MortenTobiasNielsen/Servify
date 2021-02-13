@@ -7,6 +7,7 @@ export const Colors = {
   primary: "#C2185B",
   accent: "#FFC107",
   buttonText: "#FFF",
+  text: "#000",
 };
 
 // ---------------------------------------------------------------------------
@@ -58,4 +59,14 @@ export const AddRemoveButton = {
   LineWidth: Responsive.getNormalizedHeightFromPercent(
     AddRemoveButtonSize * 0.1
   ),
+};
+
+// ---------------------------------------------------------------------------
+// Standard Profile Logo
+// ---------------------------------------------------------------------------
+const ProfileLogoSize = 15;
+
+export const ProfileLogo = {
+  size: Responsive.getNormalizedHeightFromPercent(ProfileLogoSize),
+  Radius: Responsive.getNormalizedHeightFromPercent(ProfileLogoSize * 0.5),
 };

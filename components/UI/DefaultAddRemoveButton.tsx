@@ -3,7 +3,7 @@ import { View, TouchableOpacity, StyleSheet } from "react-native";
 
 import * as Standards from "../../constants/Standards";
 
-const DefaultAddButton = (props: { Type: "Add" | "Remove" }) => {
+const DefaultAddButton = (props: { Type: "Add" | "Remove"; name: string }) => {
   // To make it work on web
   const styles = StyleSheet.create({
     circle: {
@@ -34,7 +34,7 @@ const DefaultAddButton = (props: { Type: "Add" | "Remove" }) => {
   return (
     <TouchableOpacity
       accessibilityRole="button"
-      accessibilityLabel={props.Type}
+      accessibilityLabel={props.Type + " - " + props.name}
       activeOpacity={0.6}
       onPress={() => {}}
       testID={"DefaultButton - " + props.Type}

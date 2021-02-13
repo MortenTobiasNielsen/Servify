@@ -12,6 +12,7 @@ import ChooseService from "../screens/user/ChooseService";
 import ServiceDetails from "../screens/user/ServiceDetails";
 import ChooseServiceProvider from "../screens/user/ChooseServiceProvider";
 import ServiceProviderDetails from "../screens/user/ServiceProviderDetails";
+import ServiceProviderProfile from "../screens/ServiceProvider/ServiceProviderProfile";
 import ServiceToProvide from "../screens/ServiceProvider/ServiceToProvide";
 import ServicePriceDetails from "../screens/ServiceProvider/ServicePriceDetails";
 
@@ -27,6 +28,7 @@ type UserStackNavigatorParamList = {
   "Udbyder Detaljer": undefined;
   "Log Ind": undefined;
   "Opret Bruger": undefined;
+  "Udbyder Profil": undefined;
   "Udbyd Service": undefined;
   "Service Pris Detailjer": undefined;
 };
@@ -142,6 +144,22 @@ export type ServiceToProvideProps = {
   navigation: ServiceToProvideNavigationProp;
 };
 
+// Service Provider Details screen props
+type ServiceProviderProfileScreenRouteProp = RouteProp<
+  UserStackNavigatorParamList,
+  "Udbyder Profil"
+>;
+
+type ServiceProviderProfileNavigationProp = StackNavigationProp<
+  UserStackNavigatorParamList,
+  "Udbyder Profil"
+>;
+
+export type ServiceProviderProfileProps = {
+  route: ServiceProviderProfileScreenRouteProp;
+  navigation: ServiceProviderProfileNavigationProp;
+};
+
 const UserStackNavigator = createStackNavigator<UserStackNavigatorParamList>();
 
 const NotAuthStackNavigator = () => {
@@ -171,6 +189,10 @@ const NotAuthStackNavigator = () => {
       <UserStackNavigator.Screen
         name="Service Pris Detailjer"
         component={ServicePriceDetails}
+      />
+      <UserStackNavigator.Screen
+        name="Udbyder Profil"
+        component={ServiceProviderProfile}
       />
     </UserStackNavigator.Navigator>
   );
