@@ -13,7 +13,7 @@ test("The user navigation journey when not logged in", async () => {
   // Start screen
   // ---------------------------------------------------------------------------
 
-  // Check that the rendered screen is the start screen
+  // Check that the correct screen is rendered
   expect(getByTestId("StartScreen")).toBeDefined();
 
   // Check that the tabs navigator is shown
@@ -32,7 +32,7 @@ test("The user navigation journey when not logged in", async () => {
   // Choose Service screen
   // ---------------------------------------------------------------------------
 
-  // Check that the rendered screen is the ChooseService screen
+  // Check that the correct screen is rendered
   expect(getByTestId("ChooseService")).toBeDefined();
 
   // Check that the tabs navigator is shown
@@ -51,7 +51,7 @@ test("The user navigation journey when not logged in", async () => {
   // Service Details screen
   // ---------------------------------------------------------------------------
 
-  // Check that the rendered screen is service details
+  // Check that the correct screen is rendered
   expect(getByTestId("ServiceDetails")).toBeDefined();
 
   // Check that the tabs navigator is shown
@@ -70,7 +70,7 @@ test("The user navigation journey when not logged in", async () => {
   // Choose Service Provider screen
   // ---------------------------------------------------------------------------
 
-  // Check that the rendered screen is Choose Service Provider
+  // Check that the correct screen is rendered
   expect(getByTestId("ChooseServiceProvider")).toBeDefined();
 
   // Check that the tabs navigator is shown
@@ -89,7 +89,7 @@ test("The user navigation journey when not logged in", async () => {
   // Provider Details screen
   // ---------------------------------------------------------------------------
 
-  // Check that the rendered screen is Provider details
+  // Check that the correct screen is rendered
   expect(getByTestId("ServiceProviderDetails")).toBeDefined();
 
   // Check that the tabs navigator is shown
@@ -108,12 +108,12 @@ test("The user navigation journey when not logged in", async () => {
   // Login screen
   // ---------------------------------------------------------------------------
 
-  // Check that the rendered screen is Login
+  // Check that the correct screen is rendered
   expect(getByTestId("Login")).toBeDefined();
 
   // Check that the tabs navigator is shown
   const ToStartPage = getByLabelText(/Start side, tab,/i);
-  expect(getByLabelText(/Start side, tab,/i)).toBeDefined();
+  expect(ToStartPage).toBeDefined();
   expect(getByLabelText(/Log ind, tab,/i)).toBeDefined();
   expect(getByLabelText(/Opret Bruger, tab,/i)).toBeDefined();
 
@@ -133,6 +133,6 @@ test("The user navigation journey when not logged in", async () => {
     fireEvent.press(RegisterButton);
   });
 
-  // Check that the rendered screen is Register
+  // Check that the correct screen is rendered
   expect(getByTestId("Register")).toBeDefined();
 });
