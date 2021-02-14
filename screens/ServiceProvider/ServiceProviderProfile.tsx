@@ -12,7 +12,7 @@ const ServiceProviderProfile = ({
 }: ServiceProviderProfileProps) => {
   return (
     <ScrollView testID="ScrollView">
-      <View style={styles.container}>
+      <View testID="ServiceProviderProfile" style={styles.container}>
         <DefaultChooseLogo />
         <View style={styles.serviceList}>
           <View style={styles.serviceListHeading}>
