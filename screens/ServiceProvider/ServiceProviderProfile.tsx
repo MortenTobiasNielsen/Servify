@@ -20,7 +20,7 @@ const ServiceProviderProfile = ({
             <DefaultAddRemoveButton
               Type="Add"
               Name="AddNewService"
-              Handler={() => navigation.navigate("Service Pris Detailjer")}
+              Handler={() => navigation.navigate("Udbyd Service")}
             ></DefaultAddRemoveButton>
           </View>
         </View>
