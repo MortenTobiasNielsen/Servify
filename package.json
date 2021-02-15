@@ -14,6 +14,9 @@
     ],
     "setupFiles": [
       "<rootDir>/jestSetup.js"
+    ],
+    "setupFilesAfterEnv": [
+      "<rootDir>/jest.setup.js"
     ]
   },
   "scripts": {
@@ -52,6 +55,7 @@
     "@types/react-dom": "~16.9.8",
     "@types/react-native": "~0.63.2",
     "jest-expo": "^40.0.2",
+    "msw": "^0.26.2",
     "typescript": "~4.0.0"
   },
   "private": true
